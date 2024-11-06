@@ -1,4 +1,4 @@
-# Autor: Ruana Soares - Compiladores
+### Autor: Ruana Soares - Compiladores
 # FOOLI Language - Grammar Documentation
 
 O projeto FOOLI (Fake Object-Oriented Language with Iteration) é uma extensão de FOOL (Fake Object-Oriented Language).
