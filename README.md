@@ -13,9 +13,12 @@ Métodos: Funções que podem ter parâmetros e retornar valores, com suporte pa
 Estruturas de Controle: A linguagem implementa as estruturas básicas de controle de fluxo, como if (condicional) e while (laço).
 Expressões: Suporte a expressões aritméticas com operadores como +, -, *, /, além de expressões lógicas com operadores como and, or e not.
 
-#Execução:
+##Geração de Código (TAC):
+Para a FOOLI Language, o projeto implementa um gerador de Código (TAC), que converte expressões e comandos de controle de fluxo da FOOLI em uma representação intermediária.
 
-java -jar antlr-4.13.2-complete.jar FOOLI.g4
+##Execução:
+
+java -jar antlr-4.13.2-complete.jar -visitor FOOLI.g4
 javac -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" *.java
 java -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" Main
 

@@ -122,6 +122,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitProgram(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitProgram(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -171,6 +176,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitClassDeclaration(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitClassDeclaration(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -249,6 +259,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitAttributeDeclaration(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitAttributeDeclaration(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AttributeDeclarationContext attributeDeclaration() throws RecognitionException {
@@ -321,6 +336,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitMethodDeclaration(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitMethodDeclaration(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -419,6 +439,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitParameters(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitParameters(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ParametersContext parameters() throws RecognitionException {
@@ -477,6 +502,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitParameter(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitParameter(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ParameterContext parameter() throws RecognitionException {
@@ -522,6 +552,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitDeclarationCommand(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitDeclarationCommand(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -591,6 +626,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitCommand(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitCommand(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -678,6 +718,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitAssignment(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitAssignment(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AssignmentContext assignment() throws RecognitionException {
@@ -729,6 +774,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitIfStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitIfStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -802,6 +852,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitWhileLoop(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitWhileLoop(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final WhileLoopContext whileLoop() throws RecognitionException {
@@ -853,6 +908,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitReturnStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitReturnStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -907,6 +967,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitMethodCall(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitMethodCall(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -965,6 +1030,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitArguments(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitArguments(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1026,6 +1096,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitExpression(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExpressionContext expression() throws RecognitionException {
@@ -1081,6 +1156,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitArithmeticExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitArithmeticExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1149,6 +1229,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitTerm(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitTerm(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1221,6 +1306,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitFactor(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitFactor(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FactorContext factor() throws RecognitionException {
@@ -1284,6 +1374,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitPrimary(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitPrimary(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PrimaryContext primary() throws RecognitionException {
@@ -1338,6 +1433,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitBooleanExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitBooleanExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1408,6 +1508,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitLogicalExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitLogicalExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1514,6 +1619,11 @@ public class FOOLIParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitRelationalExpression(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitRelationalExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final RelationalExpressionContext relationalExpression() throws RecognitionException {
@@ -1575,6 +1685,11 @@ public class FOOLIParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FOOLIListener ) ((FOOLIListener)listener).exitType(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FOOLIVisitor ) return ((FOOLIVisitor<? extends T>)visitor).visitType(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
