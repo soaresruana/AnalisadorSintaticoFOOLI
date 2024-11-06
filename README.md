@@ -18,9 +18,9 @@ Para a FOOLI Language, o projeto implementa um gerador de Código (TAC), que con
 
 ##Execução:
 
-java -jar antlr-4.13.2-complete.jar -visitor FOOLI.g4
-javac -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" *.java
-java -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" Main
+- java -jar antlr-4.13.2-complete.jar -visitor FOOLI.g4
+- javac -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" *.java
+- java -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" Main
 
 #Execução usando graphviz:
 - dot -Tpng tree.dot -o tree.png 
