@@ -22,8 +22,14 @@ Para a FOOLI Language, o projeto implementa um gerador de Código (TAC), que con
 - javac -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" *.java
 - java -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" Main
 
+#### Representação Gráfica com DOT
+Ao executar o analisador, um arquivo DOT é gerado automaticamente, representando o fluxo de controle e a organização das instruções TAC de maneira gráfica.
+
 #### Execução usando graphviz:
 - dot -Tpng tree.dot -o tree.png 
 - dot -Tsvg tree.dot -o tree.svg
+
+#### Resultado do TESTE
+Disponível nos arquivos tree.png, tree.svg ou via terminal.
 
 
