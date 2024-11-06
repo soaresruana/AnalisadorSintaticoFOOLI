@@ -16,13 +16,13 @@ Expressões: Suporte a expressões aritméticas com operadores como +, -, *, /, 
 ##Geração de Código (TAC):
 Para a FOOLI Language, o projeto implementa um gerador de Código (TAC), que converte expressões e comandos de controle de fluxo da FOOLI em uma representação intermediária.
 
-##Execução:
+#### Execução:
 
 - java -jar antlr-4.13.2-complete.jar -visitor FOOLI.g4
 - javac -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" *.java
 - java -cp ".;antlr-4.13.2-complete.jar;path/to/generated/classes/*" Main
 
-#Execução usando graphviz:
+#### Execução usando graphviz:
 - dot -Tpng tree.dot -o tree.png 
 - dot -Tsvg tree.dot -o tree.svg
 
